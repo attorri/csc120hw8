@@ -1,0 +1,37 @@
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+import java.lang.Math;
+import java.io.*;
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("enter a binary number");
+		String binary = keyboard.nextLine();
+        int bin_len = binary.length();
+        int counter =0;
+        for (int i=0;i<bin_len;i++)
+        {
+            String check_string = binary.substring(i,i+1);
+            Boolean zero = check_string.contains("0");
+            Boolean one = check_string.contains("1");
+            if (zero)
+            {
+                counter++;
+            }
+            else if (one)
+            {
+                counter++;
+            }
+            else 
+            {
+                System.out.println("NOT BINARY");
+                return;
+            }
+        }
+        System.out.println(binary + " is binary");
+	}
+}
